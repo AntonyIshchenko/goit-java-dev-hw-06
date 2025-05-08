@@ -49,3 +49,8 @@ bin/
 out
 target
 .DS_STORE /src/main/resources/log
+
+# Ignore configuration file
+*.properties
+# Don't ignore template
+!*.properties.template
