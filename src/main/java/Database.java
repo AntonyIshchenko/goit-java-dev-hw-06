@@ -9,7 +9,7 @@ public class Database {
     private static final Database INSTANCE = new Database();
     private Connection connection;
 
-    private Database()  {
+    private Database() {
 
         Properties props = new Properties();
         try (FileInputStream fis = new FileInputStream("./config.properties")) {
@@ -18,9 +18,9 @@ public class Database {
             e.printStackTrace();
         }
 
-        try{
-           this.connection =  DriverManager.getConnection( props.getProperty("db.url"));
-        } catch (SQLException e){
+        try {
+            this.connection = DriverManager.getConnection(props.getProperty("db.url"));
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -29,7 +29,7 @@ public class Database {
         return INSTANCE;
     }
 
-    public Connection getConnection(){
+    public Connection getConnection() {
         return this.connection;
     }
 }
